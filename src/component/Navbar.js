@@ -23,12 +23,12 @@ const Navbar = () => {
     setdetails({
       name: json.name,
       email: json.email,
-      date: json.date.substr(0, 10)
+      date: json.date.substr(0, 10),
     });
   };
 
   useEffect(() => {
-    if(location.pathname !== "/login_signup"){
+    if (location.pathname !== "/login_signup") {
       fetchDetails();
     }
     // eslint-disable-next-line
@@ -43,7 +43,7 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`navbar sticky-top navbar-expand-lg navbar-${darkMode} bg-${darkMode}`}
+        className={`navbar fixed-top navbar-expand-lg navbar-${darkMode} bg-${darkMode}`}
       >
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
@@ -53,10 +53,11 @@ const Navbar = () => {
             className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
-            data-bs-target="/navbarSupportedContent"
+            data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
             aria-label="Toggle navigation"
+            
           >
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -94,31 +95,38 @@ const Navbar = () => {
                   onChange={handleSearch}
                 />
                 <i
-                  className={`fas fa-user-circle fa-2x mx-1 mt-1 text-${(darkMode==="light")? "dark":"light"}`}
+                  className={`fas fa-user-circle fa-2x mx-1 mt-1 text-${
+                    darkMode === "light" ? "dark" : "light"
+                  }`}
                   onClick={handleClick}
                 ></i>
               </form>
             ) : (
               ""
             )}
-            <div className="form-check form-switch">
+            <div className="form-check form-switch my-2">
               <input
                 className="form-check-input"
                 type="checkbox"
                 id="flexSwitchCheckDefault"
                 onClick={toggleDarkMode}
-                
               />
-              <label className={`form-check-label text-${(darkMode==="light")? "dark":"light"}`} htmlFor="flexSwitchCheckDefault">
-              {`${(darkMode==="light")? "Dark Mode":"Light Mode"}`}
+              <label
+                className={`form-check-label text-${
+                  darkMode === "light" ? "dark" : "light"
+                }`}
+                htmlFor="flexSwitchCheckDefault"
+              >
+                {`${darkMode === "light" ? "Dark Mode" : "Light Mode"}`}
               </label>
             </div>
             <form className="d-flex mx-3">
               {!localStorage.getItem("token") ? (
                 <Link
-                  className="Link btn btn-hover btn-primary mx-1"
+                  className="Link btn btn-hover btn-primary mx-1 my-2"
                   to="/login_signup"
                   role="button"
+
                 >
                   Sign Up
                 </Link>

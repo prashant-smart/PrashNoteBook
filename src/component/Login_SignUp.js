@@ -4,7 +4,7 @@ import Signup from './Signup'
 
 const Login_SignUp = (props) => {
     return (
-        <div className="container d-flex justify-content-start">
+        <div className="container d-flex flex-wrap">
             <Login showAlert={props.showAlert}/>
             <Signup showAlert={props.showAlert}/>
         </div>
