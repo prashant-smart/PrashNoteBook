@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400&display=swap');
+*{
+  font-family: 'Cairo', sans-serif;
+}
 .App {
   text-align: center;
 }
@@ -35,4 +39,7 @@
   to {
     transform: rotate(360deg);
   }
+}
+i{
+  cursor: pointer;
 }
