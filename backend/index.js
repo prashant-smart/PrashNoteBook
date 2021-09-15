@@ -4,7 +4,7 @@ const express = require('express')
 var cors = require('cors');
 
 const app = express()
-const port = 5000 // here we cant use 3000 because at that react app will be running
+const port = process.env.PORT ||5000// here we cant use 3000 because at that react app will be running
 
 app.use(cors());
 

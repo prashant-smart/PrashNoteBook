@@ -10,8 +10,8 @@ function NoteItem(props) {
     <div className="col-md-3 my-2">
     <div className="card">
     {(note.tag)? 
-      <span class="position-absolute top-0 translate-middle badge rounded-pill bg-danger" style={{"zIndex":"1","left":"90%"}}>Tag: {(note.tag.length)>10? note.tag.substr(0,10)+"...":note.tag}
-      <span class="visually-hidden">unread messages</span>
+      <span className="position-absolute top-0 translate-middle badge rounded-pill bg-danger" style={{"zIndex":"1","left":"90%"}}>Tag: {(note.tag.length)>10? note.tag.substr(0,10)+"...":note.tag}
+      <span className="visually-hidden">unread messages</span>
       </span>
       :""}
     
