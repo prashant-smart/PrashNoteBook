@@ -16,10 +16,10 @@ app.use('/api/notes',require('./routes/notes'));
 
 
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.send('Hello World!',port)
+})
+app.listen(port, () => {
+  console.log(`server started on the ${port}`)
 })
 
-app.listen(port, () => {
-  console.log(`PrashNoteBook app listening at http://localhost:${port}`)
-})
 
