@@ -14,16 +14,6 @@ app.use(express.json())//this is the middle ware to use req body as used in auth
 app.use('/api/auth',require('./routes/auth'));
 app.use('/api/notes',require('./routes/notes'));
 
-const path = require('path');
-if (process.env.NODE_ENV === 'production') {
-  // Serve any static files
-  app.use(express.static(path.join(__dirname, '../build')));
-// Handle React routing, return all requests to React app
-  app.get('*', function(req, res) {
-    res.sendFile(path.join(__dirname, '../build', 'index.html'));
-  });
-}
-
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
