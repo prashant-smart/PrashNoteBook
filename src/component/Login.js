@@ -15,8 +15,7 @@ const Login = (props) => {
     const handleSubmit=async(e)=>{
         e.preventDefault();
         const response = await fetch("/api/auth/login", {
-          mode: 'no-cors',
-            method: 'POST',
+          method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
