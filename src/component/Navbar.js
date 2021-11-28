@@ -13,7 +13,7 @@ const Navbar = () => {
   const refNav = useRef(null);
   const [details, setdetails] = useState({ name: "", email: "", date: "" });
   const fetchDetails = async () => {
-    const response = await fetch("http://localhost:5000/api/auth/getuser", {
+    const response = await fetch("https://prashnotebookbackend.herokuapp.com/api/auth/getuser", {
       method: "POST",
       headers: {
         "auth-token": localStorage.getItem("token"),
