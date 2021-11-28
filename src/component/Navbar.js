@@ -29,10 +29,12 @@ const Navbar = () => {
 
   useEffect(() => {
     if (location.pathname !== "/login_signup") {
-      fetchDetails();
+      if( localStorage.getItem("token")){
+        fetchDetails();
+      }
     }
     // eslint-disable-next-line
-  }, []);
+  }, [localStorage.getItem("token")]);
   const handleSearch = (e) => {
     getAllNotes(e.target.value);
   };
